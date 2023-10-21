@@ -85,7 +85,7 @@ class Categories extends REST_Controller
      *
      * @return Response
      */
-    public function index_put($id)
+    public function update_post($id)
     {
 
         $this->form_validation->reset_validation();
@@ -95,13 +95,13 @@ class Categories extends REST_Controller
                 "message" => "The category with the id $id doesn't exist"
             ], REST_Controller::HTTP_NOT_FOUND);
         }
-        $this->form_validation->set_data($this->put());
+        $this->form_validation->set_data($this->post());
         $this->form_validation->set_rules('name', 'name', 'required', array('is_unique' => 'This Category Name already used. Please choose another one.'));
         if ($this->form_validation->run() == FALSE) {
             $this->response(array('errors' => validation_errors()), REST_Controller::HTTP_UNPROCESSABLE_ENTITY);
         } else {
             if ($this->Category_model->update([
-                'name' => $this->put('name')
+                'name' => $this->post('name')
             ], $id)) {
                 $this->response([
                     'message' => 'Berhasil Update Category',
@@ -120,7 +120,7 @@ class Categories extends REST_Controller
      *
      * @return Response
      */
-    public function index_delete($id)
+    public function delete_post($id)
     {
         if ($this->Category_model->delete($id)) {
             return $this->response([

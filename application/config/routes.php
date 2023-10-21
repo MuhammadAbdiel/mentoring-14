@@ -59,3 +59,11 @@ $route['register'] = 'api/User/register';
 $route['login'] = 'api/User/login';
 $route['logout'] = 'api/User/logout';
 $route['reGenToken'] = 'api/Token/reGenToken';
+
+// Categories
+$route['api/categories/(:num)/update']['POST'] = 'api/Categories/update/$1';
+$route['api/categories/(:num)/delete']['POST'] = 'api/Categories/delete/$1';
+
+// Products
+$route['api/products/(:num)/update']['POST'] = 'api/Products/update/$1';
+$route['api/products/(:num)/delete']['POST'] = 'api/Products/delete/$1';
