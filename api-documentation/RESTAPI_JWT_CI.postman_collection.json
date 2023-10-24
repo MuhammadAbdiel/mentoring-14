@@ -1,0 +1,660 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "RESTAPI_JWT_CI",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://muhammadabdiel.000webhostapp.com",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/register": {
+      "post": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "{{url}}/register",
+        "operationId": "{{url}}/register",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "username",
+                  "email",
+                  "password"
+                ],
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "type": "string",
+                    "example": "newUser1"
+                  },
+                  "email": {
+                    "type": "string",
+                    "example": "user1@example.com"
+                  },
+                  "password": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 123456
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "{{url}}/login",
+        "operationId": "{{url}}/login",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "username",
+                  "password"
+                ],
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "type": "string",
+                    "example": "newUser1"
+                  },
+                  "password": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 123456
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/logout": {
+      "post": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "{{url}}/logout",
+        "operationId": "{{url}}/logout",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "username",
+                  "password"
+                ],
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "type": "string",
+                    "example": "newUser1"
+                  },
+                  "password": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 123456
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/products": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "{{url}}/api/products",
+        "operationId": "{{url}}/api/products",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Product"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "{{url}}/api/products",
+        "operationId": "Post{{url}}/api/products",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "name",
+                  "category_id",
+                  "price",
+                  "quantity",
+                  "description"
+                ],
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "example": "Baju"
+                  },
+                  "category_id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 6
+                  },
+                  "price": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 120000
+                  },
+                  "quantity": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 20
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "Baju Olahraga"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/products/10": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "{{url}}/api/products/10",
+        "operationId": "{{url}}/api/products/10",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Product"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/products/8/update": {
+      "post": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "{{url}}/api/products/8/update",
+        "operationId": "{{url}}/api/products/8/update",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Product"
+                  },
+                  {
+                    "example": {
+                      "name": "Bajuuuuu",
+                      "category_id": 6,
+                      "price": 120000
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "name": "Bajuuuuu",
+                "category_id": 6,
+                "price": 120000
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/products/8/delete": {
+      "post": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "{{url}}/api/products/6/delete",
+        "operationId": "{{url}}/api/products/6/delete",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/categories": {
+      "get": {
+        "tags": [
+          "Categories"
+        ],
+        "summary": "{{url}}/api/categories",
+        "operationId": "{{url}}/api/categories",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Category"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Categories"
+        ],
+        "summary": "{{url}}/api/categories",
+        "operationId": "Post{{url}}/api/categories",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "name"
+                ],
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "example": "Sport"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/categories/6": {
+      "get": {
+        "tags": [
+          "Categories"
+        ],
+        "summary": "{{url}}/api/categories/6",
+        "operationId": "{{url}}/api/categories/6",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Category"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/categories/6/update": {
+      "post": {
+        "tags": [
+          "Categories"
+        ],
+        "summary": "{{url}}/api/categories/5/update",
+        "operationId": "{{url}}/api/categories/5/update",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Category"
+                  },
+                  {
+                    "example": {
+                      "name": "Sportssssss"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "name": "Sportssssss"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/categories/3/delete": {
+      "post": {
+        "tags": [
+          "Categories"
+        ],
+        "summary": "{{url}}/api/categories/5/delete",
+        "operationId": "{{url}}/api/categories/5/delete",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "User": {
+        "title": "User",
+        "required": [
+          "id",
+          "username",
+          "email",
+          "password",
+          "created_at",
+          "updated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "username": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "example": {
+          "id": 1,
+          "username": "newUser1",
+          "email": "user1@example.com",
+          "password": "123456"
+        }
+      },
+      "Category": {
+        "title": "Category",
+        "required": [
+          "id",
+          "name",
+          "created_at",
+          "updated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "example": {
+          "id": 6,
+          "name": "Sport",
+          "created_at": "2021-05-27 15:00:00",
+          "updated_at": "2021-05-27 15:00:00"
+        }
+      },
+      "Product": {
+        "title": "Product",
+        "required": [
+          "id",
+          "name",
+          "category_id",
+          "price",
+          "quantity",
+          "description",
+          "created_at",
+          "updated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string"
+          },
+          "category_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "price": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "quantity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "example": {
+          "id": 8,
+          "name": "Bajuuuuu",
+          "category_id": 6,
+          "price": 120000,
+          "quantity": 20,
+          "description": "Baju Olahraga",
+          "created_at": "2021-05-27 15:00:00",
+          "updated_at": "2021-05-27 15:00:00"
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearer": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "security": [],
+  "tags": [
+    {
+      "name": "Categories",
+      "description": ""
+    }
+  ]
+}

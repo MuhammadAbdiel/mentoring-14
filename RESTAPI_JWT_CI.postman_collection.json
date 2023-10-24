@@ -78,6 +78,16 @@
 		{
 			"name": "{{url}}/logout",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjk4MTA4Mjk4fQ.yWPqzHynrDuNxR9GTYDqE2eb_l-QYH6tVGy2zDvfukI",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -109,14 +119,37 @@
 		},
 		{
 			"name": "{{url}}/api/products",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjk4MTIxMzkzfQ.X5SGh_jzwbDYVPnSj5LjgyZ2rR6Vy248ZIdEoyJ7AIE",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjk3NzgwMzc1fQ.10hVNw3d4MIBvN0tQvou-EHJlwqatuj195Rx4Jc_KAo"
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjk3ODg5NzY2fQ.EJRXdVhRkY87pvz1Zb6hLCs41YzTDIQ94huVyy0yTBA",
+						"disabled": true
 					}
 				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "{{url}}/api/products",
 					"host": [
@@ -131,13 +164,53 @@
 			"response": []
 		},
 		{
+			"name": "{{url}}/api/products/10",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjk4MTIxMzkzfQ.X5SGh_jzwbDYVPnSj5LjgyZ2rR6Vy248ZIdEoyJ7AIE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/products/10",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"products",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "{{url}}/api/products",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjk4MTA4Mjk4fQ.yWPqzHynrDuNxR9GTYDqE2eb_l-QYH6tVGy2zDvfukI",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjk3NzgwMzc1fQ.10hVNw3d4MIBvN0tQvou-EHJlwqatuj195Rx4Jc_KAo"
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjk3ODg5NzY2fQ.EJRXdVhRkY87pvz1Zb6hLCs41YzTDIQ94huVyy0yTBA",
+						"disabled": true
 					}
 				],
 				"body": {
@@ -184,18 +257,29 @@
 			"response": []
 		},
 		{
-			"name": "{{url}}/api/products/8",
+			"name": "{{url}}/api/products/8/update",
 			"request": {
-				"method": "PUT",
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjk4MTA4Mjk4fQ.yWPqzHynrDuNxR9GTYDqE2eb_l-QYH6tVGy2zDvfukI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjk3NzgyNjQ2fQ.Uf30TK16sDkjMJtEo77yQdaYGOttSF_Q3--58V3fsbU"
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjk3ODg5NzY2fQ.EJRXdVhRkY87pvz1Zb6hLCs41YzTDIQ94huVyy0yTBA",
+						"disabled": true
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Bajuu\",\r\n    \"category_id\": 6,\r\n    \"price\": 120000\r\n}",
+					"raw": "{\r\n    \"name\": \"Bajuuuuu\",\r\n    \"category_id\": 6,\r\n    \"price\": 120000\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -203,38 +287,51 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}/api/products/8",
+					"raw": "{{url}}/api/products/8/update",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"api",
 						"products",
-						"8"
+						"8",
+						"update"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "{{url}}/api/products/6",
+			"name": "{{url}}/api/products/6/delete",
 			"request": {
-				"method": "DELETE",
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjk4MTA4Mjk4fQ.yWPqzHynrDuNxR9GTYDqE2eb_l-QYH6tVGy2zDvfukI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjk3NzgwMzc1fQ.10hVNw3d4MIBvN0tQvou-EHJlwqatuj195Rx4Jc_KAo"
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjk3ODg5NzY2fQ.EJRXdVhRkY87pvz1Zb6hLCs41YzTDIQ94huVyy0yTBA",
+						"disabled": true
 					}
 				],
 				"url": {
-					"raw": "{{url}}/api/products/7",
+					"raw": "{{url}}/api/products/8/delete",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"api",
 						"products",
-						"7"
+						"8",
+						"delete"
 					]
 				}
 			},
@@ -248,7 +345,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjk3NzgwMzc1fQ.10hVNw3d4MIBvN0tQvou-EHJlwqatuj195Rx4Jc_KAo",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjk3ODg5NzY2fQ.EJRXdVhRkY87pvz1Zb6hLCs41YzTDIQ94huVyy0yTBA",
 							"type": "string"
 						}
 					]
@@ -265,6 +362,14 @@
 						"categories"
 					]
 				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/api/categories/6",
+			"request": {
+				"method": "GET",
+				"header": []
 			},
 			"response": []
 		},
@@ -307,23 +412,23 @@
 			"response": []
 		},
 		{
-			"name": "{{url}}/api/categories/5",
+			"name": "{{url}}/api/categories/5/update",
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjk3NzgwMzc1fQ.10hVNw3d4MIBvN0tQvou-EHJlwqatuj195Rx4Jc_KAo",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjk3ODg5NzY2fQ.EJRXdVhRkY87pvz1Zb6hLCs41YzTDIQ94huVyy0yTBA",
 							"type": "string"
 						}
 					]
 				},
-				"method": "PUT",
+				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Sports\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Sportssssss\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -331,43 +436,45 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}/api/categories/6",
+					"raw": "{{url}}/api/categories/6/update",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"api",
 						"categories",
-						"6"
+						"6",
+						"update"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "{{url}}/api/categories/5",
+			"name": "{{url}}/api/categories/5/delete",
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjk3NzgwMzc1fQ.10hVNw3d4MIBvN0tQvou-EHJlwqatuj195Rx4Jc_KAo",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxIiwidXNlcm5hbWUiOiJuZXdVc2VyMSIsIkFQSV9USU1FIjoxNjk3ODg5NzY2fQ.EJRXdVhRkY87pvz1Zb6hLCs41YzTDIQ94huVyy0yTBA",
 							"type": "string"
 						}
 					]
 				},
-				"method": "DELETE",
+				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/api/categories/6",
+					"raw": "{{url}}/api/categories/3/delete",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"api",
 						"categories",
-						"6"
+						"3",
+						"delete"
 					]
 				}
 			},
